@@ -1,4 +1,4 @@
-# Finance Data Processing — Full Stack
+# Finance Data Processing And Access Control Backend— Full Stack
 
 Express.js + Prisma (SQLite) API with role-based access control, plus a React (Vite) dashboard for demos and a **single deployable URL** (API + static UI).
 
