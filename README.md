@@ -20,6 +20,11 @@ Express.js + Prisma (SQLite) API with role-based access control, plus a React (V
 | ANALYST| Yes                   | Yes            | No              |
 | ADMIN  | Yes                   | Yes            | Yes             |
 
+## How It Works
+Viewers: Read-only access to all records and analytics
+Analysts: Can create and edit their own records, view all data
+Admins: Full access to everything, including user management
+
 Inactive users cannot log in; JWTs are rejected for inactive accounts.
 
 ## Local setup
@@ -82,14 +87,6 @@ Deploy **one** Node service that runs `npm start` after a build step.
 - **Start command:** `npm start`
 - **Environment:** `JWT_SECRET`, `DATABASE_URL`, `PORT` (Render sets `PORT` automatically)
 
-If you host the **frontend on a different domain** than the API, set:
-
-- In the API: `CORS_ORIGIN=https://your-frontend.example.com`
-- When **building** the frontend: `VITE_API_URL=https://your-api.example.com`
-
-If the UI is served from Express as in this repo, leave `VITE_API_URL` empty so the browser calls the same origin.
-
-**Note:** The default SQLite file on ephemeral platforms may reset on redeploy. For a stable demo, use Postgres (Prisma: change `provider` in `schema.prisma` and migrate).
 
 ## Assumptions
 
@@ -101,4 +98,7 @@ If the UI is served from Express as in this repo, leave `VITE_API_URL` empty so 
 
 - `src/` — Express app, routes, services, RBAC middleware, Zod validators
 - `prisma/` — schema, seed
-- `frontend/` — Vite + React dashboard
+- `frontend/` — Vite + React dashboard 
+
+## Live Deployment 
+- API Base URL: https://finance-data-processing-ochre.vercel.app/
