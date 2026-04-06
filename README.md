@@ -21,9 +21,9 @@ Express.js + Prisma (SQLite) API with role-based access control, plus a React (V
 | ADMIN  | Yes                   | Yes            | Yes             |
 
 ## How It Works
-Viewers: Read-only access to all records and analytics
-Analysts: Can create and edit their own records, view all data
-Admins: Full access to everything, including user management
+- **Viewers**: Read-only access to all records and analytics
+- **Analysts**: Can create and edit their own records, view all data
+- **Admins**: Full access to everything, including user management
 
 Inactive users cannot log in; JWTs are rejected for inactive accounts.
 
